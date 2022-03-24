@@ -152,8 +152,8 @@ slow5tools view file.blow5 > file.slow5
 
 <p align="center">
   <img 
-    width="1280"
-    height="650"
+    width="1200"
+    height="600"
     src="https://github.com/asadprodhan/Reducing-storage-space-by-converting-Nanopore-fast5-to-slow5-using-slow5tools/blob/main/InfoGraph.png"
   >
 </p>
@@ -201,26 +201,29 @@ This means that the fast5 file has an attribute called ‘pore_type’, which is
 
 
 By default, the conversion of fast5 to slow5/blow5 does not dispose of any information. However, manually setting “--loseless=false” when converting the fast5 files will lose information. 
-
+<br />
+<br />
 
 **Then, how does slow5/blow5 reduce storage space?**
 
 
 It reduces the storage space by reducing the space allocation and redundancy of metadata in fast5 files (Gamaarachchi et al., 2022).
-
+<br />
+<br />
 
 **Can GPU-enabled guppy take blow5 files as input?**
 
 
 Currently, guppy does not have an option to take blow5 files as input. To apply guppy, blow5 files need to be converted back to fast5 using ‘slow5tools s2f’.
-
+<br />
+<br />
 
 **How does slow5/blow5 files reduce the run time in comparison to the fast5 file?**
 
 
 Fast5 file is based on HDF5 file. HDF5 file is generally used to store large data sets. However, parallel access to the HDF5 stored data by multiple CPU threads is serialised by the HDF5 library, an only library that can read and write data in HDF5 format. This results in a longer data access time. On the other hand, slow5/blow5 files allow for parallel access to the data by multiple CPU threads, thus reducing the data access time, and ultimately reducing the total run time (Gamaarachchi et al., 2022).
-
-
+<br />
+<br />
 
 ## **Reference:**
 
