@@ -153,14 +153,14 @@ slow5tools view file.blow5 > file.slow5
 
 <p align="center">
   <img 
-    width="780"
+    width="740"
     height="370"
     src="https://github.com/asadprodhan/Reducing-storage-space-by-converting-Nanopore-fast5-to-slow5-using-slow5tools/blob/main/Output_v2.png"
   >
 </p>
 
 <p align = "center">
-Fig. slow5tools output
+Fig. Slow5tools output
 </p>
 <br />
 <br />
@@ -183,8 +183,8 @@ Fig. slow5tools output
 <br />
 <p align="center">
   <img 
-    width="1216"
-    height="200"
+    width="900"
+    height="180"
     src="https://github.com/asadprodhan/Reducing-storage-space-by-converting-Nanopore-fast5-to-slow5-using-slow5tools/blob/main/Warning.PNG"
   >
 </p>
