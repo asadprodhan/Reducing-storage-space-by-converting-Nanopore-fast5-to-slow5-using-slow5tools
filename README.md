@@ -101,13 +101,11 @@ export HDF5_PLUGIN_PATH=/path_of_the_plugin_directory
 
 
 **Again, note that adding the path in the $PATH variable like “export PATH=$PATH:/path_of_the_plugin_directory” does not work in this case**
-
-
-
-
+<br />
+<br />
 ### **Now, the ‘slow5tools’ is all set. Run it as follows to convert the fast5 files to slow5 or blow5 file. More examples are here (Gamaarachchi, 2022).**
-
-
+<br />
+<br />
 
 **From fast5 to blow5:**
 
@@ -115,6 +113,23 @@ export HDF5_PLUGIN_PATH=/path_of_the_plugin_directory
 ```
 slow5tools f2s fast5_dir -d blow5_dir
 ```
+
+
+**If there are more than one directory, then the conversion can be looped through the directories using the following bash script**
+
+
+
+```
+#!/usr/bin/env bash
+
+for x in *; do
+    if [ -d "$x" ]; then
+        slow5tools f2s "$x" -d "${x}_blow5"
+    fi
+
+done
+```
+
 
 
 **From fast5 to slow5:**
@@ -132,6 +147,21 @@ slow5tools view file.blow5 > file.slow5
 ```
 
 
+## **Output**
+
+
+<p align="center">
+  <img 
+    width="1280"
+    height="650"
+    src="https://github.com/asadprodhan/Reducing-storage-space-by-converting-Nanopore-fast5-to-slow5-using-slow5tools/blob/main/InfoGraph.png"
+  >
+</p>
+
+<p align = "center">
+Fig. slow5tools output
+</p>
+
 
 ### **Notes:**
 
@@ -141,7 +171,7 @@ slow5tools view file.blow5 > file.slow5
 
 
 
-## **Some questions and answers**
+## **Q & A**
 
 
 
@@ -164,8 +194,8 @@ Fig. A warning message during converting the Nanopore fast5 files to blow5 files
 
  
 This means that the fast5 file has an attribute called ‘pore_type’, which is empty. Slow5 format keeps record of all the fast5 attributes even if some might be empty. For example, ‘pore_type’ attribute in this case is empty but still included in the slow5 header. As it is an empty attribute, it is safe to ignore this warning. 
-
-
+<br />
+<br />
 
 **Which information do we lose when we convert the fast5 files to slow5/blow5 files?**
 
