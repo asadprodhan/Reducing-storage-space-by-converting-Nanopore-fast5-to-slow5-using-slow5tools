@@ -1,4 +1,4 @@
-# **Reducing storage space by converting Nanopore fast5 to slow5 using slow5tools** <br />
+# **Reducing storage space by converting Nanopore fast5 files to slow5 using slow5tools** <br />
 
 
 Nanopore fast5 files contain raw signal data. Generally, these signal data are converted to base sequences (fastq) though basecalling before downstream analysis. Although, some bioinformatics algorithms directly access these raw signal data (fast5 file) for a variety of reasons such as improving sequence accuracy (Loman et al., 2015). However, storing and managing the fast5 files require disk space of tens of hundreds of gigabytes. Furthermore, parallel access to the fast5 files by multiple CPU threads, an efficient approach in modern genomics, is restricted. This is because fast5 files are based on HDF5 file format; and the input/output access request by the multiple CPU threads is serialised by HDF5 library, a library that reads and writes data in HDF5 file. 
