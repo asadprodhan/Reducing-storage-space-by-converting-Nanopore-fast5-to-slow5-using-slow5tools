@@ -152,15 +152,15 @@ slow5tools view file.blow5 > file.slow5
 <p align="center">
   <img 
     width="1216"
-    height="244"
+    height="200"
     src="https://github.com/asadprodhan/Reducing-storage-space-by-converting-Nanopore-fast5-to-slow5-using-slow5tools/blob/main/Warning.PNG"
   >
 </p>
 
 <p align = "center">
-A warning message during converting the Nanopore fast5 files to blow5 files
+Fig. A warning message during converting the Nanopore fast5 files to blow5 files
 </p>
-
+<br />
 
  
 This means that the fast5 file has an attribute called ‘pore_type’, which is empty. Slow5 format keeps record of all the fast5 attributes even if some might be empty. For example, ‘pore_type’ attribute in this case is empty but still included in the slow5 header. As it is an empty attribute, it is safe to ignore this warning. 
