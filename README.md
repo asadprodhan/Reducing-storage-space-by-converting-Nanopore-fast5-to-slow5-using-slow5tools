@@ -148,28 +148,30 @@ slow5tools view file.blow5 > file.slow5
 
 
 ## **Output**
-
+<br />
+<br />
 
 <p align="center">
   <img 
-    width="1200"
-    height="600"
-    src="https://github.com/asadprodhan/Reducing-storage-space-by-converting-Nanopore-fast5-to-slow5-using-slow5tools/blob/main/InfoGraph.png"
+    width="780"
+    height="370"
+    src="https://github.com/asadprodhan/Reducing-storage-space-by-converting-Nanopore-fast5-to-slow5-using-slow5tools/blob/main/Output_v2.png"
   >
 </p>
 
 <p align = "center">
 Fig. slow5tools output
 </p>
-
+<br />
+<br />
 
 ### **Notes:**
 
 - Slow5/blow5 files are analogous to SAM/BAM files. Slow5 is the ASCII version of blow5 and blow5 is the binary version of slow5
 - For data archiving and analysis, blow5 is used while slow5 is only meant for human readability.
 - In terms of file size, slow5 file will be larger than blow5 version
-
-
+<br />
+<br />
 
 ## **Q & A**
 
