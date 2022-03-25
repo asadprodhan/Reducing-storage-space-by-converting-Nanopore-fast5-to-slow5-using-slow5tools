@@ -44,7 +44,7 @@ slow5tools-v0.3.0 is the directory that contains the slow5tools command.
 - get the path of the ‘slow5tools-v0.3.0’ directory by running ‘pwd’
 - export PATH=$PATH:/path_of_the_slow5tools-v0.3.0_directory
 - now, the command ‘slow5tools’ can be run outside the ‘slow5tools-v0.3.0’ directory
-- this path can be permanently add to the bashrc profile. Open the bashrc profile using a text editor like 
+- this path can be permanently added to the bashrc profile. Open the bashrc profile using a text editor like 
 ```
 nano ~/.bashrc
 ```
@@ -54,7 +54,7 @@ nano ~/.bashrc
 
 
 
-Nanopore fast5 is based on hdf5 (hierarchical data format) file and uses ‘VBZ Compression’ to compress the data. Therefore, the fast5 needs to be uncompressed for converting them to slow5 or blow5 files. The ‘ont-vbz-hdf-plugin’ can uncompress the nanopore fast5 files.  
+Nanopore fast5 is based on HDF5 (hierarchical data format) file and uses ‘VBZ Compression’ to compress the data. Therefore, the fast5 needs to be uncompressed for converting them to slow5 or blow5 files. The ‘ont-vbz-hdf-plugin’ can uncompress the nanopore fast5 files.  
 
 
 
@@ -65,8 +65,8 @@ Nanopore fast5 is based on hdf5 (hierarchical data format) file and uses ‘VBZ 
 
 
 - cd scripts directory that is located inside the ‘slow5tools-v0.3.0’ directory 
-- ./install-vbz.sh. This will install the plugin ‘libvbz_hdf_plugin.so’ in ‘ont-vbz-hdf-plugin-1.0.1-Linux’ directory located in the home directory
-- then, cd to ‘ont-vbz-hdf-plugin-1.0.1-Linux’ directory and navigate all the way to the ‘plugin’ directory; get the path of the ‘plugin’ directory by running ‘pwd’, and set the path in bashrc profile in as “export HDF5_PLUGIN_PATH=/path_of_the_plugin_directory”. Note that adding the path in the $PATH variable like “export PATH=$PATH:/path_of_the_plugin_directory” does not work in this case. 
+- run ./install-vbz.sh. This will install the plugin ‘libvbz_hdf_plugin.so’ in ‘ont-vbz-hdf-plugin-1.0.1-Linux’ directory located in the home directory
+- then, cd to ‘ont-vbz-hdf-plugin-1.0.1-Linux’ directory and navigate all the way down to the ‘plugin’ directory; get the path of the ‘plugin’ directory by running ‘pwd’, and add the path to the bashrc profile as “export HDF5_PLUGIN_PATH=/path_of_the_plugin_directory”. Note that adding the path in the $PATH variable like “export PATH=$PATH:/path_of_the_plugin_directory” does not work in this case. 
 
 
 
@@ -92,7 +92,7 @@ then,
 cd ont-vbz-hdf-plugin-1.0.1-Linux
 ```
 
-Navigate all the way to the ‘plugin’ directory; get the path of the ‘plugin’ directory by running ‘pwd’, and add the path to the bashrc profile as 
+Navigate all the way down to the ‘plugin’ directory; get the path of the ‘plugin’ directory by running ‘pwd’, and add the path to the bashrc profile as 
 
 
 ```
@@ -115,7 +115,7 @@ slow5tools f2s fast5_dir -d blow5_dir
 ```
 
 
-**If there are more than one directory, then the conversion can be looped through the directories using the following bash script**
+**If there are more than one directory, then the file conversion can be looped through the directories using the following bash script**
 
 
 
@@ -160,7 +160,7 @@ slow5tools view file.blow5 > file.slow5
 </p>
 
 <p align = "center">
-Fig. Slow5tools output
+Fig. Slow5tools output showing the reduction in storage space
 </p>
 <br />
 <br />
@@ -168,8 +168,8 @@ Fig. Slow5tools output
 ### **Notes:**
 
 - Slow5/blow5 files are analogous to SAM/BAM files. Slow5 is the ASCII version of blow5 and blow5 is the binary version of slow5
-- For data archiving and analysis, blow5 is used while slow5 is only meant for human readability.
-- In terms of file size, slow5 file will be larger than blow5 version
+- For data archiving and analysis, blow5 is used while slow5 is for human readability.
+- In terms of file size, slow5 file will be larger than its blow5 version
 <br />
 <br />
 
@@ -202,32 +202,32 @@ This means that the fast5 file has an attribute called ‘pore_type’, which is
 **Which information do we lose when we convert the fast5 files to slow5/blow5 files?**
 
 
-By default, the conversion of fast5 to slow5/blow5 does not dispose of any information. However, manually setting “--loseless=false” when converting the fast5 files will lose information. 
+By default, the conversion of fast5 to slow5/blow5 does not dispose of any information. However, manually setting “--loseless=false” when converting the fast5 files to slow5/blow5 files will lose information. 
 <br />
 <br />
 
-**Then, how does slow5/blow5 reduce storage space?**
+**Then, how do the slow5/blow5 files reduce the storage space?**
 
 
-It reduces the storage space by reducing the space allocation and redundancy of metadata in fast5 files (Gamaarachchi et al., 2022).
+Slow5/blow5 files reduce the storage space by reducing the space allocation and redundancy of metadata in the fast5 files (Gamaarachchi et al., 2022).
 <br />
 <br />
 
 **Can GPU-enabled guppy take blow5 files as input?**
 
 
-Currently, guppy does not have an option to take blow5 files as input. To apply guppy, blow5 files need to be converted back to fast5 using ‘slow5tools s2f’.
+Currently, guppy does not have an option to take blow5 files as input. To apply guppy, blow5 files need to be converted back to fast5 files using ‘slow5tools s2f’.
 <br />
 <br />
 
-**How does slow5/blow5 files reduce the run time in comparison to the fast5 file?**
+**How do the blow5 files reduce the run time compared to that with the fast5 files?**
 
 
-Fast5 file is based on HDF5 file. HDF5 file is generally used to store large data sets. However, parallel access to the HDF5 stored data by multiple CPU threads is serialised by the HDF5 library, an only library that can read and write data in HDF5 format. This results in a longer data access time. On the other hand, slow5/blow5 files allow for parallel access to the data by multiple CPU threads, thus reducing the data access time, and ultimately reducing the total run time (Gamaarachchi et al., 2022).
+Fast5 files are based on the HDF5 file format. HDF5 file is generally used to store large data sets. However, parallel access to the HDF5 stored data by multiple CPU threads is serialised by the HDF5 library, the only library that can read and write data in HDF5 format. This results in a longer data access time. On the other hand, blow5 files allow for parallel access to the data by multiple CPU threads, thus reducing the data access time, and ultimately reducing the total run time (Gamaarachchi et al., 2022).
 <br />
 <br />
 
-## **Reference:**
+## **References:**
 
 
 Gamaarachchi, H., 2022. slow5tools. URL https://github.com/hasindu2008/slow5tools (accessed 3.23.22).
