@@ -7,7 +7,7 @@ Nanopore fast5 files contain raw signal data. Generally, the signal data are con
 However, the slow5tools (Gamaarachchi et al., 2022) can convert the Nanopore fast5 files to slow5/blow5 files that require less storage space compared to that for fast5. In addition, blow5 files allow for parallel access by the multiple CPU threads. The slow5tools user manual is well documented (Gamaarachchi, 2022) to follow on.
 
 
-Here, I compile the steps that I followed on to set up the slow5tools on Linux (Ubuntu 18.04) computer. I also present a Q and A (question and answer) section that describes a warning message, how storage space is saved, and whether guppy basecalling can be applied again after the conversion.
+Here, I compile the steps that I followed on to set up the slow5tools on Linux computer (Ubuntu 18.04). I also present a Q and A (question and answer) section that describes a warning message, how the storage space is saved, and whether guppy basecalling can be applied again after the conversion.
 
 
 
