@@ -154,7 +154,7 @@ slow5tools view file.blow5 > file.slow5
 <p align="center">
   <img 
     width="740"
-    height="370"
+    height="340"
     src="https://github.com/asadprodhan/Reducing-storage-space-by-converting-Nanopore-fast5-to-slow5-using-slow5tools/blob/main/Output_v2.png"
   >
 </p>
@@ -184,7 +184,7 @@ Fig. Slow5tools output showing the reduction in storage space
 <p align="center">
   <img 
     width="750"
-    height="160"
+    height="140"
     src="https://github.com/asadprodhan/Reducing-storage-space-by-converting-Nanopore-fast5-to-slow5-using-slow5tools/blob/main/Warning.PNG"
   >
 </p>
@@ -216,7 +216,21 @@ Slow5/blow5 files reduce the storage space by reducing the space allocation and 
 **Can GPU-enabled guppy take blow5 files as input?**
 
 
-Currently, guppy does not have an option to take blow5 files as input. To apply guppy, blow5 files need to be converted back to fast5 files using ‘slow5tools s2f’.
+Currently, guppy does not have an option to take blow5 files as input. To apply guppy, blow5 files need to be converted back to fast5 files using ‘slow5tools s2f’. See an example below:
+<br />
+<br />
+
+<p align="center">
+  <img 
+    width="750"
+    height="100"
+    src="https://github.com/asadprodhan/Reducing-storage-space-by-converting-Nanopore-fast5-to-slow5-using-slow5tools/blob/main/Blow5_to_fast5_to_guppy_read%20_numbers_v2.PNG"
+  >
+</p>
+
+<p align = "center">
+Fig. The screenshot showing that the guppy basecalling produces same number of reads from the original fast5 files (barcode11_basecalls_pass.fastq) and its back-converted fast5 files (barcode11_blow5_fast5_basecalls_pass.fastq). 'barcode11_blow5_fast5' means that the barcode11 directory of fast5 files was converted to a directory of blow5 files  (barcode11_blow5), then converted back to a directory of fast5 files (barcode11_blow5_fast5) for re-basecalling.
+</p>
 <br />
 <br />
 
