@@ -183,8 +183,8 @@ Fig. Slow5tools output
 <br />
 <p align="center">
   <img 
-    width="900"
-    height="180"
+    width="750"
+    height="160"
     src="https://github.com/asadprodhan/Reducing-storage-space-by-converting-Nanopore-fast5-to-slow5-using-slow5tools/blob/main/Warning.PNG"
   >
 </p>
